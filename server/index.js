@@ -6,6 +6,8 @@ const mainRoutes = require("./routes/mainRoutes");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
+
+
 app.use(cors());
 
 app.use(bodyParser.json());
