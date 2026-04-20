@@ -258,3 +258,20 @@ exports.AddPostController = async(req , res) =>{
         })
     }
 }
+
+exports.GetPostsController= async (req , res) =>{
+    const userId = req.body.userId;
+    const posts = await postMode.find({ uid: userId }).sort({ createdAt: -1 });
+
+    if(posts.length > 0){
+        res.send({
+            message: "Posts fetched successfully",
+            posts: posts
+        })
+    } else {
+        res.status(404).send({
+            message: "No posts found for this user",
+            status: "notfound"
+        })
+    }
+}

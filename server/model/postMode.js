@@ -25,7 +25,10 @@ const postSchema = mongoose.Schema({
         type : Date,
         default : Date(),
     },
+    
 
-})
+} ,{timestamps : true},{
+    database: "test"
+} );
 
 module.exports = mongoose.model("Posts" , postSchema);

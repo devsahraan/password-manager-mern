@@ -26,6 +26,8 @@ const userSchema = mongoose.Schema({
         default : false,
     },
 
+},{
+    database: "test"
 })
 
 module.exports = mongoose.model("Users" , userSchema);
