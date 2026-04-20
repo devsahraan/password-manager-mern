@@ -43,7 +43,7 @@ function Register() {
           if(data.status === "failed"){
             return showError(data.message);
           } else{
-            navigate("/verifyotp" , {replace : true , state : {email : useremail , forget : false}} );
+            navigate("/verifyotp" , {replace : true , state : {email : useremail , forget : false ,verifyOtp : true}} );
             showSuccess(data.message);
 
           }

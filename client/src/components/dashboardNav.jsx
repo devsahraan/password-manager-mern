@@ -5,6 +5,13 @@ function DashboardNavbar() {
   const location = useLocation();
   let navigate = useNavigate();
 
+  const logout = () =>{
+    localStorage.removeItem("email");
+    localStorage.removeItem("id");
+    localStorage.removeItem("username");
+    navigate("/login", { replace: true })
+  }
+
   const hiddenRoutes = ['/' , "/register" , "/verifyotp" , "/login" , "/forgotpassword" , "/newpassword"];
 
   if (hiddenRoutes.includes(location.pathname)) {
@@ -23,7 +30,7 @@ function DashboardNavbar() {
             
           </div>
           <div>
-            <button onClick={() => navigate("/login", { replace: true })} className='bg-red-500 font-semibold p-2 rounded-lg hover:bg-red-700 text-white ease-linear duration-300'>
+            <button onClick={() => logout() } className='bg-red-500 font-semibold p-2 rounded-lg hover:bg-red-700 text-white ease-linear duration-300'>
                 Logout
             </button>
           </div>
