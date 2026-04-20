@@ -9,5 +9,6 @@ router.post("/login" , userController.LoginController);
 router.post("/forgetpassword" , userController.ForgetPassController);
 router.post("/newpassword" , userController.NewPasswordController);
 router.post("/addPost" , userController.AddPostController);
+router.post("/getPosts" , userController.GetPostsController);
 
 module.exports = router;
